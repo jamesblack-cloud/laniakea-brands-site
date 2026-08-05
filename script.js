@@ -1,0 +1,3 @@
+const nav=document.getElementById('nav');addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>30));
+const menu=document.getElementById('menu'),links=nav.querySelector('nav');menu.addEventListener('click',()=>{const open=links.classList.toggle('open');menu.setAttribute('aria-expanded',open)});links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('reveal');observer.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.brand-panel,.cap-grid,.partner-grid,.contact').forEach(el=>observer.observe(el));
