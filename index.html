@@ -44,6 +44,22 @@
     .ss{background:linear-gradient(90deg,rgba(243,237,223,.92) 0,rgba(243,237,223,.5) 40%,rgba(243,237,223,0) 100%),url('/assets/ss-lace.png') center/cover no-repeat}
     .ss:before{background:none}
     .ss .brand-logo{background:#fffaf0;border:1px solid rgba(48,47,42,.14);padding:clamp(24px,4vw,60px);width:min(680px,80%);box-shadow:none;animation:none}
+    .navlinks{margin-left:auto;display:flex;gap:clamp(22px,3.5vw,48px);font-size:14px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+    .navlinks a{position:relative;padding:6px 0}
+    .navlinks a:after{content:"";position:absolute;left:0;right:100%;bottom:0;height:2px;background:var(--brass);transition:.3s}
+    .navlinks a:hover:after{right:0}
+    .navlinks a:last-child{margin-left:0}
+    .news{padding:clamp(90px,10vw,150px) var(--pad);background:#efe8d9;border-top:1px solid var(--line);display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(40px,6vw,100px);align-items:start}
+    .news h2{font-size:clamp(56px,7vw,110px);line-height:.9;margin:14px 0 0}
+    .news h2 i{color:var(--sage)}
+    .release{border-top:1px solid var(--line);padding:30px 0 34px}
+    .release time{font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--brass)}
+    .release h3{font-family:"Instrument Serif",serif;font-weight:400;font-size:clamp(26px,2.6vw,36px);margin:10px 0 12px;line-height:1.1}
+    .release p{color:var(--muted);line-height:1.65;max-width:560px;margin:0;font-size:15px}
+    .news-cta{border-top:1px solid var(--line);padding-top:26px;display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap}
+    .news-cta p{margin:0;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--muted)}
+    .news-cta a{border-bottom:1px solid currentColor;padding-bottom:5px;font-size:15px}
+    @media(max-width:780px){.news{grid-template-columns:1fr;gap:34px}.navlinks{gap:18px;font-size:12px}}
     .bgvid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:0;transition:opacity 1.2s ease}
     .bgvid.on{opacity:1}
     .veil{position:absolute;inset:0;z-index:1;pointer-events:none}
@@ -68,15 +84,20 @@
        per channel strategy. Tropicalised Beach Bum packshots removed — flagged non-compliant
        (lifestyle scene / loose product); do not reintroduce. Products stat corrected to 100 per Claudia. -->
   <div class="scroll-progress" aria-hidden="true"><i id="progress"></i></div>
-  <nav class="nav" id="nav"><a href="#top"><img src="/assets/13-laniakea-logo-dark-Bb9UUJvs.png" alt="Laniakea Brands"></a><a href="#brands">Our brands ↓</a></nav>
+  <nav class="nav" id="nav"><a href="#top"><img src="/assets/13-laniakea-logo-dark-Bb9UUJvs.png" alt="Laniakea Brands"></a><div class="navlinks"><a href="#brands">Our brands</a><a href="#news">News</a><a href="mailto:info@laniakeabrands.com">Contact</a></div></nav>
   <main id="top">
     <header class="hero"><div class="reveal"><div class="eyebrow">A Canadian house of brands</div><h1 class="display">Made to<br><i>stand out.</i></h1><p>Distinct cannabis brands, thoughtfully built and reliably made under one roof.</p><div class="hero-meta"><span>Est. in Alberta</span><span>Built for Canada</span></div></div><div class="hero-mark reveal"><img src="/assets/13-laniakea-logo-dark-Bb9UUJvs.png" alt="Laniakea Brands emblem"></div></header>
-    <div class="proof reveal"><div><strong>50K</strong><span>sq. ft. facility</span></div><div><strong>8.5M</strong><span>pre-rolls / month capacity</span></div><div><strong>100</strong><span>products</span></div><div><strong>8</strong><span>active markets</span></div></div>
+    <div class="proof reveal"><div><strong>50K</strong><span>sq. ft. facility</span></div><div><strong>8.5M</strong><span>pre-rolls / month capacity</span></div><div><strong>100+</strong><span>products</span></div><div><strong>8</strong><span>active markets</span></div></div>
     <section class="portfolio" id="brands"><div class="portfolio-head reveal"><h2 class="display">Meet the<br><i>family.</i></h2><p>Four brands with four very different personalities—each built to be recognized from across the store.</p></div><div class="brands">
       <article class="brand bb reveal"><video class="bgvid" muted loop playsinline preload="metadata" poster="/assets/beach-bum-golden-hour-world-16x9-R7p2B8vy.png"><source src="/assets/bb-loop.mp4" type="video/mp4"></video><div class="veil"></div><div class="brand-copy"><span class="index">01 · Beach Bum Cannabis</span><div><p>Bright, coastal and permanently on island time.</p><a class="brand-link" href="https://beachbumcannabis.ca" rel="noopener">Visit Beach Bum ↗</a></div></div><img class="brand-logo" src="/assets/10-beach-bum-cannabis-logo-icon-1--Ci01199t.png" alt="Beach Bum Cannabis logo"></article>
       <article class="brand sr reveal"><video class="bgvid" muted loop playsinline preload="metadata" poster="/assets/sr-nebula.png"><source src="/assets/sr-loop.mp4" type="video/mp4"></video><div class="veil"></div><div class="brand-copy"><span class="index">02 · Space Race Cannabis</span><div><p>Retro-futurist cannabis engineered for lift-off.</p><a class="brand-link" href="https://www.spaceracecannabis.com" rel="noopener">Visit Space Race ↗</a></div></div><img class="brand-logo" src="/assets/12-Space-Race-Cannabis_Logo-C09IXf6y.png" alt="Space Race Cannabis logo"></article>
       <article class="brand vt reveal"><video class="bgvid" muted loop playsinline preload="metadata" poster="/assets/vt-violet.png"><source src="/assets/vt-loop.mp4" type="video/mp4"></video><div class="veil"></div><div class="brand-copy"><span class="index">03 · Violet Tourist</span><div><p>Premium, precise and quietly unexpected.</p><a class="brand-link" href="https://violettourist.ca" rel="noopener">Visit Violet Tourist ↗</a></div></div><img class="brand-logo" src="/assets/11-violet-TOURIST-PNG-Logo-ClRzhnVU.png" alt="Violet Tourist logo"></article>
       <article class="brand ss reveal"><div class="brand-copy"><span class="index">04 · Shoestring</span><div><p>Straightforward value without the shortcuts.</p><span class="brand-link soon">Site coming soon</span></div></div><img class="brand-logo" src="/assets/14-Shoestring-Logo-C37XZN7u.jpg" alt="Shoestring logo"></article>
+    </div></section>
+    <section class="news" id="news"><div class="news-head reveal"><div class="eyebrow">Announcements</div><h2 class="display">In the<br><i>news.</i></h2></div><div class="news-list reveal">
+      <article class="release"><time>July 8, 2026</time><h3>Shoestring Cannabis lands in Manitoba</h3><p>Shoestring 10 × 0.5 g pre-rolls are now available to licensed retailers across Manitoba — straightforward cannabis, no shortcuts.</p></article>
+      <article class="release"><time>August 5, 2026</time><h3>Laniakea Brands launches its new home</h3><p>laniakeabrands.com relaunches, bringing Beach Bum, Space Race, Violet Tourist and Shoestring together under one roof.</p></article>
+      <div class="news-cta"><p>Media inquiries &amp; press assets</p><a href="mailto:info@laniakeabrands.com">info@laniakeabrands.com ↗</a></div>
     </div></section>
   </main>
   <footer class="end"><div class="end-inner"><img src="/assets/13-laniakea-logo-dark-Bb9UUJvs.png" alt="Laniakea Brands"><p>Edmonton, Alberta<br><a href="mailto:info@laniakeabrands.com">info@laniakeabrands.com</a><br>© 2026 Laniakea Brands Inc.<br>For adults of legal age.</p></div></footer>
