@@ -1,109 +1,141 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Laniakea Brands — Canadian Cannabis Brands</title>
-  <meta name="description" content="A Canadian house of cannabis brands, built in Edmonton, Alberta.">
-  <link rel="icon" href="/assets/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png"><link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-  <style>
-    :root{--cream:#f3eddf;--paper:#e8dfce;--ink:#292a25;--muted:#716d63;--sage:#879073;--brass:#b88955;--line:rgba(41,42,37,.16);--pad:clamp(22px,5.5vw,88px)}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:"DM Sans",sans-serif}body.lock{overflow:hidden}a{color:inherit;text-decoration:none}button{font:inherit}.display{font-family:"Instrument Serif",serif;font-weight:400}.eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600}.age{position:fixed;inset:0;z-index:100;background:#282a23;color:#fffaf0;display:grid;place-items:center;padding:24px;transition:.65s cubic-bezier(.7,0,.2,1)}.age.hidden{opacity:0;visibility:hidden;transform:translateY(-100%)}.age-card{text-align:center;max-width:520px}.age-card img{width:110px;height:100px;object-fit:contain;filter:brightness(0) invert(1);margin-bottom:26px}.age h1{font-size:clamp(54px,7vw,88px);line-height:.95;margin:14px 0 20px}.age p{color:#cbc6ba;line-height:1.6}.actions{display:flex;gap:10px;justify-content:center;margin-top:28px}.btn{border:1px solid currentColor;padding:14px 22px;background:transparent;color:inherit;cursor:pointer}.btn.fill{background:var(--sage);border-color:var(--sage);color:white}.nav{position:fixed;z-index:50;top:0;width:100%;height:82px;padding:0 var(--pad);display:flex;align-items:center;border-bottom:1px solid transparent;transition:.3s}.nav.scrolled{background:rgba(243,237,223,.92);backdrop-filter:blur(14px);border-color:var(--line)}.nav img{width:105px;height:60px;object-fit:contain}.nav a:last-child{margin-left:auto;font-size:12px;letter-spacing:.15em;text-transform:uppercase}.hero{min-height:92svh;padding:135px var(--pad) 75px;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(38px,7vw,120px);align-items:center;overflow:hidden}.hero h1{font-size:clamp(72px,9.3vw,155px);line-height:.84;letter-spacing:-.045em;margin:20px 0 28px}.hero h1 i{color:var(--sage)}.hero p{font-size:clamp(17px,1.45vw,21px);line-height:1.6;color:var(--muted);max-width:570px}.hero-mark{height:min(68vh,700px);background:var(--paper);position:relative;display:grid;place-items:center;overflow:hidden}.hero-mark:before,.hero-mark:after{content:"";position:absolute;border:1px solid rgba(184,137,85,.55);border-radius:50%}.hero-mark:before{width:72%;aspect-ratio:1}.hero-mark:after{width:108%;aspect-ratio:1}.hero-mark img{width:64%;height:64%;object-fit:contain;mix-blend-mode:multiply;position:relative;z-index:1}.hero-meta{display:flex;gap:34px;margin-top:38px;font-size:11px;letter-spacing:.14em;text-transform:uppercase}.proof{border-block:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);padding:0 var(--pad)}.proof div{padding:34px 24px 35px 0;border-right:1px solid var(--line)}.proof div+div{padding-left:28px}.proof div:last-child{border:0}.proof strong{font-family:"Instrument Serif";font-size:clamp(44px,5vw,72px);font-weight:400;display:block;line-height:1}.proof span{font-size:12px;color:var(--muted)}.portfolio{padding:clamp(95px,11vw,155px) var(--pad)}.portfolio-head{display:grid;grid-template-columns:1fr 1fr;align-items:end;margin-bottom:55px}.portfolio h2{font-size:clamp(64px,8vw,122px);line-height:.9;margin:0}.portfolio-head p{color:var(--muted);max-width:480px;justify-self:end;line-height:1.6}.brands{display:grid;gap:18px}.brand{min-height:620px;position:relative;overflow:hidden;padding:34px;display:grid;grid-template-columns:.72fr 1.28fr;align-items:center}.brand-copy{position:relative;z-index:4;align-self:stretch;display:flex;flex-direction:column;justify-content:space-between}.brand-copy .index{font-size:11px;letter-spacing:.18em;text-transform:uppercase}.brand-copy p{font-size:15px;line-height:1.6;max-width:290px}.brand-link{display:inline-block;margin-top:16px;padding-bottom:7px;border-bottom:1px solid currentColor;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}.brand-link.soon{opacity:.55;border-bottom-style:dashed}.brand-logo{width:min(420px,75%);max-height:265px;object-fit:contain;justify-self:center;position:relative;z-index:3;transition:transform .6s}.brand:hover .brand-logo{transform:scale(1.035)}.bb{background:#dfcba5;color:#282821}.bb .brand-logo{width:min(360px,70%)}.bb-products{position:absolute;right:-3%;bottom:-7%;width:66%;height:96%;z-index:1}.bb-products img{position:absolute;width:42%;height:56%;object-fit:contain;filter:drop-shadow(0 24px 18px rgba(55,39,19,.2))}.bb-products img:first-child{right:29%;bottom:-2%;transform:rotate(-7deg)}.bb-products img:nth-child(2){right:1%;bottom:5%;transform:rotate(7deg)}.bb .brand-logo{position:absolute;left:9%;top:28%;z-index:5}.sr{background:radial-gradient(circle at 75% 45%,#182647 0,#080c18 48%,#05070d 78%);color:#f4f6ff}.sr:after{content:"";position:absolute;inset:0;background-image:radial-gradient(#fff 0.7px,transparent .8px);background-size:37px 37px;opacity:.18}.vt{background:linear-gradient(120deg,#100716,#29133a);color:#f5edf8}.vt:after{content:"";position:absolute;width:430px;height:430px;border:1px solid #a8f0cd;border-radius:50%;right:9%;top:15%;opacity:.25}.ss{background:#f0ebdf;color:#302f2a}.ss:after{content:none}.ss .brand-logo{background:white;padding:30px;width:min(500px,78%)}.end{padding:20px var(--pad) 100px}.end-inner{border-top:1px solid var(--line);padding-top:46px;display:flex;justify-content:space-between;align-items:end}.end img{width:135px;height:100px;object-fit:contain}.end p{text-align:right;color:var(--muted);font-size:13px;line-height:1.6}.reveal{opacity:0;transform:translateY(24px);transition:.8s cubic-bezier(.2,.7,.2,1)}.reveal.in{opacity:1;transform:none}@media(max-width:780px){.nav{height:70px}.hero{grid-template-columns:1fr;padding-top:110px}.hero-mark{height:50vh}.hero-meta{flex-wrap:wrap}.proof{grid-template-columns:1fr 1fr}.proof div:nth-child(2){border-right:0}.proof div{border-bottom:1px solid var(--line)}.portfolio-head{grid-template-columns:1fr;gap:20px}.portfolio-head p{justify-self:start}.brand{min-height:540px;grid-template-columns:1fr;padding:25px}.brand-copy{min-height:145px}.brand-logo{width:68%;max-height:210px}.bb .brand-logo{left:25px;top:125px;width:42%}.bb-products{width:100%;height:74%;right:-10%}.end-inner{align-items:start}.end p{max-width:220px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
-  </style>
-  <style>
-    /* Cinematic browser treatment — Figma is no longer the motion surface. */
-    body{background:#ede6d8;overflow-x:hidden}
-    .nav{mix-blend-mode:normal}.nav img{width:132px;height:68px}
-    .hero{min-height:100svh;position:relative;background:linear-gradient(90deg,rgba(247,242,231,.98) 0,rgba(247,242,231,.86) 38%,rgba(247,242,231,.08) 72%),url('/assets/laniakea-sky.png') center/cover no-repeat}
-    .hero:before{content:"";position:absolute;width:58vw;aspect-ratio:1;border:1px solid rgba(114,80,37,.2);border-radius:50%;right:-14vw;top:-12vw;animation:orbit 22s linear infinite}
-    .hero:after{content:"";position:absolute;inset:auto 0 0;height:26%;background:linear-gradient(transparent,rgba(41,42,37,.06));pointer-events:none}
-    .hero>div{position:relative;z-index:2}.hero h1{font-size:clamp(82px,10vw,170px)}
-    .hero-mark{background:transparent;isolation:isolate;overflow:visible}
-    .hero-mark:before{width:82%;background:rgba(255,250,240,.4);box-shadow:0 40px 100px rgba(74,54,27,.12);animation:breathe 7s ease-in-out infinite}
-    .hero-mark:after{width:115%;animation:orbit 25s linear infinite reverse}
-    .hero-mark img{width:78%;height:78%;filter:drop-shadow(0 28px 34px rgba(92,57,16,.16));mix-blend-mode:multiply;animation:float 6s ease-in-out infinite}
-    .proof{background:#252720;color:#f7f1e5;position:relative;z-index:3}.proof span{color:#bbb8ae;text-transform:uppercase;letter-spacing:.12em;font-size:10px}.proof strong{color:#d0ae72}
-    .portfolio{padding-inline:0}.portfolio-head{padding-inline:var(--pad)}.brands{gap:0}
-    .brand{min-height:100svh;padding:clamp(34px,6vw,88px);grid-template-columns:.58fr 1.42fr;isolation:isolate}
-    .brand:before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0}
-    .brand-copy{min-height:70svh}.brand-copy .index{font-size:12px}.brand-copy p{font-size:18px;max-width:340px}
-    .brand-logo{max-height:52vh;width:min(620px,74%);filter:drop-shadow(0 24px 36px rgba(0,0,0,.2));animation:float 7s ease-in-out infinite}
-    .bb{background:linear-gradient(90deg,rgba(234,216,183,.94) 0,rgba(234,216,183,.48) 43%,rgba(224,137,74,.08) 100%),url('/assets/beach-bum-golden-hour-world-16x9-R7p2B8vy.png') center/cover no-repeat}
-    .bb:before{background:radial-gradient(circle at 75% 18%,rgba(255,248,211,.85),transparent 22%),linear-gradient(8deg,transparent 0 64%,rgba(255,255,255,.24) 65%,transparent 68%)}
-    .bb .brand-logo{left:8%;top:31%;width:min(390px,29vw);filter:drop-shadow(0 18px 26px rgba(48,58,38,.18))}
-    .bb-products{right:-1%;bottom:-3%;width:69%;height:102%}.bb-products img{width:47%;height:68%;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
-    .bb-products img:first-child{right:32%;bottom:-5%;transform:rotate(-9deg)}.bb-products img:nth-child(2){right:-1%;bottom:4%;transform:rotate(8deg)}
-    .bb:hover .bb-products img:first-child{transform:rotate(-12deg) translateY(-14px)}.bb:hover .bb-products img:nth-child(2){transform:rotate(11deg) translateY(-22px)}
-    .sr{background:linear-gradient(90deg,rgba(3,5,12,.94) 0,rgba(3,5,12,.5) 42%,rgba(3,5,12,.08) 100%),url('/assets/sr-nebula.png') center/cover no-repeat}
-    .sr:before{background:radial-gradient(circle at 72% 46%,rgba(79,216,232,.16),transparent 22%),linear-gradient(112deg,transparent 45%,rgba(79,216,232,.09) 46%,transparent 48%)}
-    .sr:after{background-image:radial-gradient(#fff 1px,transparent 1.2px);background-size:49px 49px;opacity:.28;animation:stars 20s linear infinite}
-    .sr .brand-logo{filter:drop-shadow(0 0 60px rgba(79,216,232,.35)) drop-shadow(0 18px 30px rgba(0,0,0,.45))}
-    .vt{background:linear-gradient(90deg,rgba(13,7,19,.9) 0,rgba(13,7,19,.48) 42%,rgba(13,7,19,.16) 100%),url('/assets/vt-violet.png') center/cover no-repeat}
-    .vt:before{background:linear-gradient(135deg,transparent 42%,rgba(168,240,205,.08) 43%,transparent 44%)}
-    .vt:after{width:52vw;height:52vw;right:-3vw;top:calc(50% - 26vw);border-color:rgba(168,240,205,.38);animation:orbit 18s linear infinite}
-    .vt .brand-logo{background:#f0eadf;padding:4% 5%;border-radius:14px;box-shadow:0 30px 90px rgba(0,0,0,.4)}
-    .ss{background:#fffdf6;color:#1b3b29}
-    .ss:before{background:none}
-    .ss .brand-logo{background:none;border:0;padding:0;width:min(440px,68%);box-shadow:none;animation:none}
-    .ss .brand-copy p{color:#1b3b29;font-weight:600;font-size:clamp(16px,1.3vw,19px)}
-    .ss .brand-copy p em{color:#ae2424;font-style:normal}
-    .ss .brand-link{color:#1b5e3c;border-bottom-color:#1b5e3c}
-    .navlinks{margin-left:auto;display:flex;gap:clamp(22px,3.5vw,48px);font-size:14px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
-    .navlinks a{position:relative;padding:6px 0}
-    .navlinks a:after{content:"";position:absolute;left:0;right:100%;bottom:0;height:2px;background:var(--brass);transition:.3s}
-    .navlinks a:hover:after{right:0}
-    .navlinks a:last-child{margin-left:0}
-    .news{padding:clamp(90px,10vw,150px) var(--pad);background:#efe8d9;border-top:1px solid var(--line);display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(40px,6vw,100px);align-items:start}
-    .news h2{font-size:clamp(56px,7vw,110px);line-height:.9;margin:14px 0 0}
-    .news h2 i{color:var(--sage)}
-    .release{border-top:1px solid var(--line);padding:30px 0 34px}
-    .release time{font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--brass)}
-    .release h3{font-family:"Instrument Serif",serif;font-weight:400;font-size:clamp(26px,2.6vw,36px);margin:10px 0 12px;line-height:1.1}
-    .release p{color:var(--muted);line-height:1.65;max-width:560px;margin:0;font-size:15px}
-    .news-cta{border-top:1px solid var(--line);padding-top:26px;display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap}
-    .news-cta p{margin:0;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--muted)}
-    .news-cta a{border-bottom:1px solid currentColor;padding-bottom:5px;font-size:15px}
-    @media(max-width:780px){.news{grid-template-columns:1fr;gap:34px}.navlinks{gap:18px;font-size:12px}}
-    .bgvid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:0;transition:opacity 1.2s ease}
-    .bgvid.on{opacity:1}
-    .veil{position:absolute;inset:0;z-index:1;pointer-events:none}
-    .bb .veil{background:linear-gradient(90deg,rgba(234,216,183,.94) 0,rgba(234,216,183,.48) 43%,rgba(224,137,74,.08) 100%)}
-    .sr .veil{background:linear-gradient(90deg,rgba(3,5,12,.94) 0,rgba(3,5,12,.5) 42%,rgba(3,5,12,.08) 100%)}
-    .vt .veil{background:linear-gradient(90deg,rgba(13,7,19,.9) 0,rgba(13,7,19,.48) 42%,rgba(13,7,19,.16) 100%)}
-    .brand:before{z-index:2}
-    @media(prefers-reduced-motion:reduce){.bgvid{display:none}}
-    .scroll-progress{position:fixed;z-index:80;right:18px;top:50%;transform:translateY(-50%);width:2px;height:120px;background:rgba(41,42,37,.14)}
-    .scroll-progress i{display:block;width:100%;height:0;background:#b88955;box-shadow:0 0 14px rgba(184,137,85,.55)}
-    .brand-copy,.brand-logo,.bb-products{will-change:transform}
-    @keyframes float{0%,100%{transform:translateY(var(--scroll-shift,0px)) rotate(0)}50%{transform:translateY(calc(var(--scroll-shift,0px) - 18px)) rotate(.5deg)}}
-    @keyframes breathe{50%{transform:scale(1.055);opacity:.65}}
-    @keyframes orbit{to{transform:rotate(360deg)}}
-    @keyframes stars{to{background-position:49px 98px}}
-    @keyframes drift{to{background-position:88px 0}}
-    @media(max-width:780px){.hero:before{width:110vw}.proof strong{font-size:46px}.proof span{line-height:1.4;display:block;margin-top:7px}.brand{min-height:82svh;grid-template-columns:1fr}.brand-copy{min-height:150px}.brand-logo{width:78%;max-height:46vh}.bb .brand-logo{left:25px;top:145px;width:46vw}.bb-products{height:72%;width:110%;right:-20%}.vt:after{width:90vw;height:90vw;right:-28vw;top:24%}}
-  </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Laniakea Brands — Canadian Cannabis Brands</title>
+<meta name="description" content="A Canadian house of cannabis brands, built in Edmonton, Alberta.">
+<link rel="icon" href="/assets/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png"><link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#f3eddf;--paper:#e8dfce;--ink:#292a25;--muted:#716d63;--sage:#879073;--brass:#b88955;--line:rgba(41,42,37,.16);--pad:clamp(22px,5.5vw,88px)}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:"DM Sans",sans-serif}body.lock{overflow:hidden}a{color:inherit;text-decoration:none}button{font:inherit}.display{font-family:"Instrument Serif",serif;font-weight:400}.eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600}.age{position:fixed;inset:0;z-index:100;background:#282a23;color:#fffaf0;display:grid;place-items:center;padding:24px;transition:.65s cubic-bezier(.7,0,.2,1)}.age.hidden{opacity:0;visibility:hidden;transform:translateY(-100%)}.age-card{text-align:center;max-width:520px}.age-card img{width:110px;height:100px;object-fit:contain;filter:brightness(0) invert(1);margin-bottom:26px}.age h1{font-size:clamp(54px,7vw,88px);line-height:.95;margin:14px 0 20px}.age p{color:#cbc6ba;line-height:1.6}.actions{display:flex;gap:10px;justify-content:center;margin-top:28px}.btn{border:1px solid currentColor;padding:14px 22px;background:transparent;color:inherit;cursor:pointer}.btn.fill{background:var(--sage);border-color:var(--sage);color:white}.nav{position:fixed;z-index:50;top:0;width:100%;height:82px;padding:0 var(--pad);display:flex;align-items:center;border-bottom:1px solid transparent;transition:.3s}.nav.scrolled{background:rgba(243,237,223,.92);backdrop-filter:blur(14px);border-color:var(--line)}.nav img{width:105px;height:60px;object-fit:contain}.nav a:last-child{margin-left:auto;font-size:12px;letter-spacing:.15em;text-transform:uppercase}.hero{min-height:92svh;padding:135px var(--pad) 75px;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(38px,7vw,120px);align-items:center;overflow:hidden}.hero h1{font-size:clamp(72px,9.3vw,155px);line-height:.84;letter-spacing:-.045em;margin:20px 0 28px}.hero h1 i{color:var(--sage)}.hero p{font-size:clamp(17px,1.45vw,21px);line-height:1.6;color:var(--muted);max-width:570px}.hero-mark{height:min(68vh,700px);background:var(--paper);position:relative;display:grid;place-items:center;overflow:hidden}.hero-mark:before,.hero-mark:after{content:"";position:absolute;border:1px solid rgba(184,137,85,.55);border-radius:50%}.hero-mark:before{width:72%;aspect-ratio:1}.hero-mark:after{width:108%;aspect-ratio:1}.hero-mark img{width:64%;height:64%;object-fit:contain;mix-blend-mode:multiply;position:relative;z-index:1}.hero-meta{display:flex;gap:34px;margin-top:38px;font-size:11px;letter-spacing:.14em;text-transform:uppercase}.proof{border-block:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);padding:0 var(--pad)}.proof div{padding:34px 24px 35px 0;border-right:1px solid var(--line)}.proof div+div{padding-left:28px}.proof div:last-child{border:0}.proof strong{font-family:"Instrument Serif";font-size:clamp(44px,5vw,72px);font-weight:400;display:block;line-height:1}.proof span{font-size:12px;color:var(--muted)}.portfolio{padding:clamp(95px,11vw,155px) var(--pad)}.portfolio-head{display:grid;grid-template-columns:1fr 1fr;align-items:end;margin-bottom:55px}.portfolio h2{font-size:clamp(64px,8vw,122px);line-height:.9;margin:0}.portfolio-head p{color:var(--muted);max-width:480px;justify-self:end;line-height:1.6}.brands{display:grid;gap:18px}.brand{min-height:620px;position:relative;overflow:hidden;padding:34px;display:grid;grid-template-columns:.72fr 1.28fr;align-items:center}.brand-copy{position:relative;z-index:4;align-self:stretch;display:flex;flex-direction:column;justify-content:space-between}.brand-copy .index{font-size:11px;letter-spacing:.18em;text-transform:uppercase}.brand-copy p{font-size:15px;line-height:1.6;max-width:290px}.brand-link{display:inline-block;margin-top:16px;padding-bottom:7px;border-bottom:1px solid currentColor;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}.brand-link.soon{opacity:.55;border-bottom-style:dashed}.brand-logo{width:min(420px,75%);max-height:265px;object-fit:contain;justify-self:center;position:relative;z-index:3;transition:transform .6s}.brand:hover .brand-logo{transform:scale(1.035)}.bb{background:#dfcba5;color:#282821}.bb .brand-logo{width:min(360px,70%)}.bb-products{position:absolute;right:-3%;bottom:-7%;width:66%;height:96%;z-index:1}.bb-products img{position:absolute;width:42%;height:56%;object-fit:contain;filter:drop-shadow(0 24px 18px rgba(55,39,19,.2))}.bb-products img:first-child{right:29%;bottom:-2%;transform:rotate(-7deg)}.bb-products img:nth-child(2){right:1%;bottom:5%;transform:rotate(7deg)}.bb .brand-logo{position:absolute;left:9%;top:28%;z-index:5}.sr{background:radial-gradient(circle at 75% 45%,#182647 0,#080c18 48%,#05070d 78%);color:#f4f6ff}.sr:after{content:"";position:absolute;inset:0;background-image:radial-gradient(#fff 0.7px,transparent .8px);background-size:37px 37px;opacity:.18}.vt{background:linear-gradient(120deg,#100716,#29133a);color:#f5edf8}.vt:after{content:"";position:absolute;width:430px;height:430px;border:1px solid #a8f0cd;border-radius:50%;right:9%;top:15%;opacity:.25}.ss{background:#f0ebdf;color:#302f2a}.ss:after{content:none}.ss .brand-logo{background:white;padding:30px;width:min(500px,78%)}.end{padding:20px var(--pad) 100px}.end-inner{border-top:1px solid var(--line);padding-top:46px;display:flex;justify-content:space-between;align-items:end}.end img{width:135px;height:100px;object-fit:contain}.end p{text-align:right;color:var(--muted);font-size:13px;line-height:1.6}.reveal{opacity:0;transform:translateY(24px);transition:.8s cubic-bezier(.2,.7,.2,1)}.reveal.in{opacity:1;transform:none}@media(max-width:780px){.nav{height:70px}.hero{grid-template-columns:1fr;padding-top:110px}.hero-mark{height:50vh}.hero-meta{flex-wrap:wrap}.proof{grid-template-columns:1fr 1fr}.proof div:nth-child(2){border-right:0}.proof div{border-bottom:1px solid var(--line)}.portfolio-head{grid-template-columns:1fr;gap:20px}.portfolio-head p{justify-self:start}.brand{min-height:540px;grid-template-columns:1fr;padding:25px}.brand-copy{min-height:145px}.brand-logo{width:68%;max-height:210px}.bb .brand-logo{left:25px;top:125px;width:42%}.bb-products{width:100%;height:74%;right:-10%}.end-inner{align-items:start}.end p{max-width:220px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+<style>
+/* Cinematic browser treatment — Figma is no longer the motion surface. */
+body{background:#ede6d8;overflow-x:hidden}
+.nav{mix-blend-mode:normal}.nav img{width:132px;height:68px}
+.hero{min-height:100svh;position:relative;background:linear-gradient(90deg,rgba(247,242,231,.98) 0,rgba(247,242,231,.86) 38%,rgba(247,242,231,.08) 72%),url('/assets/laniakea-sky.png') center/cover no-repeat}
+.hero:before{content:"";position:absolute;width:58vw;aspect-ratio:1;border:1px solid rgba(114,80,37,.2);border-radius:50%;right:-14vw;top:-12vw;animation:orbit 22s linear infinite}
+.hero:after{content:"";position:absolute;inset:auto 0 0;height:26%;background:linear-gradient(transparent,rgba(41,42,37,.06));pointer-events:none}
+.hero>div{position:relative;z-index:2}.hero h1{font-size:clamp(82px,10vw,170px)}
+.hero-mark{background:transparent;isolation:isolate;overflow:visible}
+.hero-mark:before{width:82%;background:rgba(255,250,240,.4);box-shadow:0 40px 100px rgba(74,54,27,.12);animation:breathe 7s ease-in-out infinite}
+.hero-mark:after{width:115%;animation:orbit 25s linear infinite reverse}
+.hero-mark img{width:78%;height:78%;filter:drop-shadow(0 28px 34px rgba(92,57,16,.16));mix-blend-mode:multiply;animation:float 6s ease-in-out infinite}
+.proof{background:#252720;color:#f7f1e5;position:relative;z-index:3}.proof span{color:#bbb8ae;text-transform:uppercase;letter-spacing:.12em;font-size:10px}.proof strong{color:#d0ae72}
+.portfolio{padding-inline:0}.portfolio-head{padding-inline:var(--pad)}.brands{gap:0}
+.brand{min-height:100svh;padding:clamp(34px,6vw,88px);grid-template-columns:.58fr 1.42fr;isolation:isolate}
+.brand:before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0}
+.brand-copy{min-height:70svh}.brand-copy .index{font-size:12px}.brand-copy p{font-size:18px;max-width:340px}
+.brand-logo{max-height:52vh;width:min(620px,74%);filter:drop-shadow(0 24px 36px rgba(0,0,0,.2));animation:float 7s ease-in-out infinite}
+.bb{background:linear-gradient(90deg,rgba(234,216,183,.94) 0,rgba(234,216,183,.48) 43%,rgba(224,137,74,.08) 100%),url('/assets/beach-bum-golden-hour-world-16x9-R7p2B8vy.png') center/cover no-repeat}
+.bb:before{background:radial-gradient(circle at 75% 18%,rgba(255,248,211,.85),transparent 22%),linear-gradient(8deg,transparent 0 64%,rgba(255,255,255,.24) 65%,transparent 68%)}
+.bb .brand-logo{left:8%;top:31%;width:min(390px,29vw);filter:drop-shadow(0 18px 26px rgba(48,58,38,.18))}
+.bb-products{right:-1%;bottom:-3%;width:69%;height:102%}.bb-products img{width:47%;height:68%;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.bb-products img:first-child{right:32%;bottom:-5%;transform:rotate(-9deg)}.bb-products img:nth-child(2){right:-1%;bottom:4%;transform:rotate(8deg)}
+.bb:hover .bb-products img:first-child{transform:rotate(-12deg) translateY(-14px)}.bb:hover .bb-products img:nth-child(2){transform:rotate(11deg) translateY(-22px)}
+.sr{background:linear-gradient(90deg,rgba(3,5,12,.94) 0,rgba(3,5,12,.5) 42%,rgba(3,5,12,.08) 100%),url('/assets/sr-nebula.png') center/cover no-repeat}
+.sr:before{background:radial-gradient(circle at 72% 46%,rgba(79,216,232,.16),transparent 22%),linear-gradient(112deg,transparent 45%,rgba(79,216,232,.09) 46%,transparent 48%)}
+.sr:after{background-image:radial-gradient(#fff 1px,transparent 1.2px);background-size:49px 49px;opacity:.28;animation:stars 20s linear infinite}
+.sr .brand-logo{filter:drop-shadow(0 0 60px rgba(79,216,232,.35)) drop-shadow(0 18px 30px rgba(0,0,0,.45))}
+.vt{background:linear-gradient(90deg,rgba(13,7,19,.9) 0,rgba(13,7,19,.48) 42%,rgba(13,7,19,.16) 100%),url('/assets/vt-violet.png') center/cover no-repeat}
+.vt:before{background:linear-gradient(135deg,transparent 42%,rgba(168,240,205,.08) 43%,transparent 44%)}
+.vt:after{width:52vw;height:52vw;right:-3vw;top:calc(50% - 26vw);border-color:rgba(168,240,205,.38);animation:orbit 18s linear infinite}
+.vt .brand-logo{background:#f0eadf;padding:4% 5%;border-radius:14px;box-shadow:0 30px 90px rgba(0,0,0,.4)}
+.ss{background:#fffdf6;color:#1b3b29}
+.ss:before{background:none}
+.ss .brand-logo{background:none;border:0;padding:0;width:min(440px,68%);box-shadow:none;animation:none}
+.ss .brand-copy p{color:#1b3b29;font-weight:600;font-size:clamp(16px,1.3vw,19px)}
+.ss .brand-copy p em{color:#ae2424;font-style:normal}
+.ss .brand-link{color:#1b5e3c;border-bottom-color:#1b5e3c}
+.navlinks{margin-left:auto;display:flex;gap:clamp(22px,3.5vw,48px);font-size:14px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+.navlinks a{position:relative;padding:6px 0}
+.navlinks a:after{content:"";position:absolute;left:0;right:100%;bottom:0;height:2px;background:var(--brass);transition:.3s}
+.navlinks a:hover:after{right:0}
+.navlinks a:last-child{margin-left:0}
+.news{padding:clamp(90px,10vw,150px) var(--pad);background:#efe8d9;border-top:1px solid var(--line);display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(40px,6vw,100px);align-items:start}
+.news h2{font-size:clamp(56px,7vw,110px);line-height:.9;margin:14px 0 0}
+.news h2 i{color:var(--sage)}
+.release{border-top:1px solid var(--line);padding:30px 0 34px}
+.release time{font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--brass)}
+.release h3{font-family:"Instrument Serif",serif;font-weight:400;font-size:clamp(26px,2.6vw,36px);margin:10px 0 12px;line-height:1.1}
+.release p{color:var(--muted);line-height:1.65;max-width:560px;margin:0;font-size:15px}
+.news-cta{border-top:1px solid var(--line);padding-top:26px;display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap}
+.news-cta p{margin:0;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--muted)}
+.news-cta a{border-bottom:1px solid currentColor;padding-bottom:5px;font-size:15px}
+@media(max-width:780px){.news{grid-template-columns:1fr;gap:34px}.navlinks{gap:18px;font-size:12px}}
+.bgvid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:0;transition:opacity 1.2s ease}
+.bgvid.on{opacity:1}
+.veil{position:absolute;inset:0;z-index:1;pointer-events:none}
+.bb .veil{background:linear-gradient(90deg,rgba(234,216,183,.94) 0,rgba(234,216,183,.48) 43%,rgba(224,137,74,.08) 100%)}
+.sr .veil{background:linear-gradient(90deg,rgba(3,5,12,.94) 0,rgba(3,5,12,.5) 42%,rgba(3,5,12,.08) 100%)}
+.vt .veil{background:linear-gradient(90deg,rgba(13,7,19,.9) 0,rgba(13,7,19,.48) 42%,rgba(13,7,19,.16) 100%)}
+.brand:before{z-index:2}
+@media(prefers-reduced-motion:reduce){.bgvid{display:none}}
+.scroll-progress{position:fixed;z-index:80;right:18px;top:50%;transform:translateY(-50%);width:2px;height:120px;background:rgba(41,42,37,.14)}
+.scroll-progress i{display:block;width:100%;height:0;background:#b88955;box-shadow:0 0 14px rgba(184,137,85,.55)}
+.brand-copy,.brand-logo,.bb-products{will-change:transform}
+@keyframes float{0%,100%{transform:translateY(var(--scroll-shift,0px)) rotate(0)}50%{transform:translateY(calc(var(--scroll-shift,0px) - 18px)) rotate(.5deg)}}
+@keyframes breathe{50%{transform:scale(1.055);opacity:.65}}
+@keyframes orbit{to{transform:rotate(360deg)}}
+@keyframes stars{to{background-position:49px 98px}}
+@keyframes drift{to{background-position:88px 0}}
+@media(max-width:780px){.hero:before{width:110vw}.proof strong{font-size:46px}.proof span{line-height:1.4;display:block;margin-top:7px}.brand{min-height:82svh;grid-template-columns:1fr}.brand-copy{min-height:150px}.brand-logo{width:78%;max-height:46vh}.bb .brand-logo{left:25px;top:145px;width:46vw}.bb-products{height:72%;width:110%;right:-20%}.vt:after{width:90vw;height:90vw;right:-28vw;top:24%}}
+</style>
+<style>
+/* Flight Path timeline — added 2026-08-11 (Claude, CH-WEB-LNK) */
+.flight{padding:clamp(90px,10vw,150px) var(--pad);border-top:1px solid var(--line);display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(40px,6vw,100px);align-items:start}
+.flight h2{font-size:clamp(56px,7vw,110px);line-height:.9;margin:14px 0 0}
+.flight h2 i{color:var(--brass)}
+.flight-head p{color:var(--muted);line-height:1.65;max-width:420px;margin-top:22px}
+.tl{list-style:none;margin:6px 0 0;padding:0;position:relative;max-width:680px}
+.tl:before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:1px;background:rgba(184,137,85,.45)}
+.tl li{position:relative;padding:0 0 40px 46px}
+.tl li:last-child{padding-bottom:0}
+.tl li:before{content:"";position:absolute;left:0;top:4px;width:13px;height:13px;border-radius:50%;background:var(--cream);border:1px solid var(--brass);box-sizing:border-box}
+.tl li:last-child:before{background:var(--brass);box-shadow:0 0 18px rgba(184,137,85,.55)}
+.tl time{font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--brass);display:block}
+.tl h3{font-family:"Instrument Serif",serif;font-weight:400;font-size:clamp(22px,2.2vw,30px);margin:8px 0 0;line-height:1.15}
+@media(max-width:780px){.flight{grid-template-columns:1fr;gap:34px}}
+</style>
 </head>
 <body>
-  <!-- v3 production pass (Claude): age gate removed — corporate layer carries no consumer promotion,
-       per channel strategy. Tropicalised Beach Bum packshots removed — flagged non-compliant
-       (lifestyle scene / loose product); do not reintroduce. Products stat corrected to 100 per Claudia. -->
-  <div class="scroll-progress" aria-hidden="true"><i id="progress"></i></div>
-  <nav class="nav" id="nav"><a href="#top"><img src="/assets/13-laniakea-logo-dark-Bb9UUJvs.png" alt="Laniakea Brands"></a><div class="navlinks"><a href="#brands">Our brands</a><a href="#news">News</a><a href="mailto:info@laniakeabrands.com">Contact</a></div></nav>
-  <main id="top">
-    <header class="hero"><div class="reveal"><div class="eyebrow">A Canadian house of brands</div><h1 class="display">Made to<br><i>stand out.</i></h1><p>Distinct cannabis brands, thoughtfully built and reliably made under one roof.</p><div class="hero-meta"><span>Est. in Alberta</span><span>Built for Canada</span></div></div><div class="hero-mark reveal"><img src="/assets/13-laniakea-logo-dark-Bb9UUJvs.png" alt="Laniakea Brands emblem"></div></header>
-    <div class="proof reveal"><div><strong>50K</strong><span>sq. ft. processing facility with the industry's most automated pre-roll capability</span></div><div><strong>8.5M</strong><span>pre-rolls / month capacity</span></div><div><strong>100+</strong><span>products</span></div><div><strong>8</strong><span>active markets</span></div></div>
-    <section class="portfolio" id="brands"><div class="portfolio-head reveal"><h2 class="display">Meet the<br><i>family.</i></h2><p>Four brands with four very different personalities—each built to be recognized from across the store.</p></div><div class="brands">
-      <article class="brand bb reveal"><video class="bgvid" muted loop playsinline preload="metadata" poster="/assets/beach-bum-golden-hour-world-16x9-R7p2B8vy.png"><source src="/assets/bb-loop.mp4" type="video/mp4"></video><div class="veil"></div><div class="brand-copy"><span class="index">01 · Beach Bum Cannabis</span><div><p>Bright, coastal and permanently on island time.</p><a class="brand-link" href="https://beachbumcannabis.ca" rel="noopener">Visit Beach Bum ↗</a></div></div><img class="brand-logo" src="/assets/10-beach-bum-cannabis-logo-icon-1--Ci01199t.png" alt="Beach Bum Cannabis logo"></article>
-      <article class="brand sr reveal"><video class="bgvid" muted loop playsinline preload="metadata" poster="/assets/sr-nebula.png"><source src="/assets/sr-loop.mp4" type="video/mp4"></video><div class="veil"></div><div class="brand-copy"><span class="index">02 · Space Race Cannabis</span><div><p>Retro-futurist cannabis engineered for lift-off.</p><a class="brand-link" href="https://www.spaceracecannabis.com" rel="noopener">Visit Space Race ↗</a></div></div><img class="brand-logo" src="/assets/12-Space-Race-Cannabis_Logo-C09IXf6y.png" alt="Space Race Cannabis logo"></article>
-      <article class="brand vt reveal"><video class="bgvid" muted loop playsinline preload="metadata" poster="/assets/vt-violet.png"><source src="/assets/vt-loop.mp4" type="video/mp4"></video><div class="veil"></div><div class="brand-copy"><span class="index">03 · Violet Tourist</span><div><p>Premium, precise and quietly unexpected.</p><a class="brand-link" href="https://violettourist.ca" rel="noopener">Visit Violet Tourist ↗</a></div></div><img class="brand-logo" src="/assets/11-violet-TOURIST-PNG-Logo-ClRzhnVU.png" alt="Violet Tourist logo"></article>
-      <article class="brand ss reveal"><div class="brand-copy"><span class="index">04 · Shoestring</span><div><p>High standards. <em>Shoestring budget.</em></p><a class="brand-link" href="https://shoestringcannabis.ca" rel="noopener">Visit Shoestring ↗</a></div></div><img class="brand-logo" src="https://shoestringcannabis.ca/logo.png" alt="Shoestring Cannabis logo"></article>
-    </div></section>
-    <section class="news" id="news"><div class="news-head reveal"><div class="eyebrow">Announcements</div><h2 class="display">In the<br><i>news.</i></h2></div><div class="news-list reveal">
-      <article class="release"><time>July 8, 2026</time><h3>Shoestring Cannabis lands in Manitoba</h3><p>Shoestring 10 × 0.5 g pre-rolls are now available to licensed retailers across Manitoba — straightforward cannabis, no shortcuts.</p></article>
-      <article class="release"><time>August 5, 2026</time><h3>Laniakea Brands launches its new home</h3><p>laniakeabrands.com relaunches, bringing Beach Bum, Space Race, Violet Tourist and Shoestring together under one roof.</p></article>
-      <div class="news-cta"><p>Media inquiries &amp; press assets</p><a href="mailto:info@laniakeabrands.com">info@laniakeabrands.com ↗</a></div>
-    </div></section>
-  </main>
-  <footer class="end"><div class="end-inner"><img src="/assets/13-laniakea-logo-dark-Bb9UUJvs.png" alt="Laniakea Brands"><p>Edmonton, Alberta<br><a href="mailto:info@laniakeabrands.com">info@laniakeabrands.com</a><br>© 2026 Laniakea Brands Inc.<br>For adults of legal age.</p></div></footer>
-  <script>const nav=document.querySelector('#nav'),progress=document.querySelector('#progress'),hero=document.querySelector('.hero');const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.1});document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));const vo=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;if(e.isIntersecting){v.play().then(()=>v.classList.add('on')).catch(()=>{})}else{v.pause()}}),{threshold:.25});document.querySelectorAll('.bgvid').forEach(v=>vo.observe(v));let ticking=false;function motion(){const y=scrollY,max=document.documentElement.scrollHeight-innerHeight;nav.classList.toggle('scrolled',y>35);progress.style.height=`${max?y/max*100:0}%`;if(hero){const hz=Math.min(8,y/140);hero.style.backgroundSize=`auto,${100+hz}%`;hero.style.backgroundPosition=`center,center ${50+y*.018}%`}document.querySelectorAll('.brand').forEach(section=>{const r=section.getBoundingClientRect(),p=Math.max(-1,Math.min(1,(innerHeight/2-(r.top+r.height/2))/innerHeight));const logo=section.querySelector('.brand-logo'),copy=section.querySelector('.brand-copy'),packs=section.querySelector('.bb-products');if(logo)logo.style.setProperty('--scroll-shift',`${p*38}px`);if(copy)copy.style.transform=`translate3d(0,${p*-28}px,0)`;if(packs)packs.style.transform=`translate3d(0,${p*34}px,0)`;if(section.classList.contains('bb')||section.classList.contains('vt'))section.style.backgroundPosition=`center,center ${50+p*4}%`});ticking=false}addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(motion);ticking=true}},{passive:true});motion();</script>
+<!-- v3 production pass (Claude): age gate removed — corporate layer carries no consumer promotion,
+per channel strategy. Tropicalised Beach Bum packshots removed — flagged non-compliant
+(lifestyle scene / loose product); do not reintroduce. Products stat corrected to 100 per Claudia. -->
+<div class="scroll-progress" aria-hidden="true"><i id="progress"></i></div>
+<nav class="nav" id="nav"><a href="#top"><img src="/assets/13-laniakea-logo-dark-Bb9UUJvs.png" alt="Laniakea Brands"></a><div class="navlinks"><a href="#brands">Our brands</a><a href="#timeline">Timeline</a><a href="#news">News</a><a href="mailto:info@laniakeabrands.com">Contact</a></div></nav>
+<main id="top">
+<header class="hero"><div class="reveal"><div class="eyebrow">A Canadian house of brands</div><h1 class="display">Made to<br><i>stand out.</i></h1><p>Distinct cannabis brands, thoughtfully built and reliably made under one roof.</p><div class="hero-meta"><span>Est. in Alberta</span><span>Built for Canada</span></div></div><div class="hero-mark reveal"><img src="/assets/13-laniakea-logo-dark-Bb9UUJvs.png" alt="Laniakea Brands emblem"></div></header>
+<div class="proof reveal"><div><strong>50K</strong><span>sq. ft. processing facility with the industry's most automated pre-roll capability</span></div><div><strong>8.5M</strong><span>pre-rolls / month capacity</span></div><div><strong>100+</strong><span>products</span></div><div><strong>8</strong><span>active markets</span></div></div>
+<section class="portfolio" id="brands"><div class="portfolio-head reveal"><h2 class="display">Meet the<br><i>family.</i></h2><p>Four brands with four very different personalities—each built to be recognized from across the store.</p></div><div class="brands">
+<article class="brand bb reveal"><video class="bgvid" muted loop playsinline preload="metadata" poster="/assets/beach-bum-golden-hour-world-16x9-R7p2B8vy.png"><source src="/assets/bb-loop.mp4" type="video/mp4"></video><div class="veil"></div><div class="brand-copy"><span class="index">01 · Beach Bum Cannabis</span><div><p>Bright, coastal and permanently on island time.</p><a class="brand-link" href="https://beachbumcannabis.ca" rel="noopener">Visit Beach Bum ↗</a></div></div><img class="brand-logo" src="/assets/10-beach-bum-cannabis-logo-icon-1--Ci01199t.png" alt="Beach Bum Cannabis logo"></article>
+<article class="brand sr reveal"><video class="bgvid" muted loop playsinline preload="metadata" poster="/assets/sr-nebula.png"><source src="/assets/sr-loop.mp4" type="video/mp4"></video><div class="veil"></div><div class="brand-copy"><span class="index">02 · Space Race Cannabis</span><div><p>Retro-futurist cannabis engineered for lift-off.</p><a class="brand-link" href="https://www.spaceracecannabis.com" rel="noopener">Visit Space Race ↗</a></div></div><img class="brand-logo" src="/assets/12-Space-Race-Cannabis_Logo-C09IXf6y.png" alt="Space Race Cannabis logo"></article>
+<article class="brand vt reveal"><video class="bgvid" muted loop playsinline preload="metadata" poster="/assets/vt-violet.png"><source src="/assets/vt-loop.mp4" type="video/mp4"></video><div class="veil"></div><div class="brand-copy"><span class="index">03 · Violet Tourist</span><div><p>Premium, precise and quietly unexpected.</p><a class="brand-link" href="https://violettourist.ca" rel="noopener">Visit Violet Tourist ↗</a></div></div><img class="brand-logo" src="/assets/11-violet-TOURIST-PNG-Logo-ClRzhnVU.png" alt="Violet Tourist logo"></article>
+<article class="brand ss reveal"><div class="brand-copy"><span class="index">04 · Shoestring</span><div><p>High standards. <em>Shoestring budget.</em></p><a class="brand-link" href="https://shoestringcannabis.ca" rel="noopener">Visit Shoestring ↗</a></div></div><img class="brand-logo" src="https://shoestringcannabis.ca/logo.png" alt="Shoestring Cannabis logo"></article>
+</div></section>
+<section class="flight" id="timeline"><div class="flight-head reveal"><div class="eyebrow">Milestones</div><h2 class="display">The flight<br><i>path.</i></h2><p>How 2026 was built — facility, licensing, capacity and new markets, in order.</p></div><ol class="tl reveal">
+<li><time>March 2026</time><h3>Space Race completes two consecutive years as Alberta's #1 pre-rolled joint brand</h3></li>
+<li><time>April 2026</time><h3>Construction completed on our new production facility</h3></li>
+<li><time>June 2026</time><h3>Final Health Canada licensing received — Standard Processing &amp; Medical Sales</h3></li>
+<li><time>June 2026</time><h3>Nunavut comes online as a new market</h3></li>
+<li><time>July 2026</time><h3>New facility online and in production</h3></li>
+<li><time>August 2026</time><h3>Fifth JuanaRoll machine commissioned — pre-roll capacity reaches 8.5 million units per month</h3></li>
+<li><time>August 2026</time><h3>Newfoundland &amp; Labrador comes online</h3></li>
+<li><time>August 2026</time><h3>Beach Bum Cannabis launches in Alberta</h3></li>
+</ol></section>
+<section class="news" id="news"><div class="news-head reveal"><div class="eyebrow">Announcements</div><h2 class="display">In the<br><i>news.</i></h2></div><div class="news-list reveal">
+<article class="release"><time>June 2026</time><h3>Final Health Canada licences received</h3><p>Standard Processing and Medical Sales licences issued for Laniakea's new production facility.</p></article>
+<article class="release"><time>June 2026</time><h3>Nunavut becomes a new market</h3><p>Laniakea Brands products land in Nunavut for the first time.</p></article>
+<article class="release"><time>July 2026</time><h3>New production facility online</h3><p>Following construction completion in April, Laniakea's new facility enters full production.</p></article>
+<article class="release"><time>July 8, 2026</time><h3>Shoestring Cannabis lands in Manitoba</h3><p>Shoestring 10 × 0.5 g pre-rolls are now available to licensed retailers across Manitoba — straightforward cannabis, no shortcuts.</p></article>
+<article class="release"><time>August 5, 2026</time><h3>Laniakea Brands launches its new home</h3><p>laniakeabrands.com relaunches, bringing Beach Bum, Space Race, Violet Tourist and Shoestring together under one roof.</p></article>
+<article class="release"><time>August 2026</time><h3>Pre-roll capacity reaches 8.5 million units per month</h3><p>The commissioning of Laniakea's fifth JuanaRoll machine, alongside existing equipment, brings monthly pre-rolled joint capacity to 8.5 million units.</p></article>
+<article class="release"><time>August 2026</time><h3>Newfoundland &amp; Labrador comes online</h3><p>Laniakea Brands products are now available in Newfoundland &amp; Labrador, the company's newest market.</p></article>
+<article class="release"><time>August 2026</time><h3>Beach Bum Cannabis launches in Alberta</h3><p>Laniakea Brands' coastal brand arrives on Alberta shelves.</p></article>
+<div class="news-cta"><p>Media inquiries &amp; press assets</p><a href="mailto:info@laniakeabrands.com">info@laniakeabrands.com ↗</a></div>
+</div></section>
+</main>
+<footer class="end"><div class="end-inner"><img src="/assets/13-laniakea-logo-dark-Bb9UUJvs.png" alt="Laniakea Brands"><p>Edmonton, Alberta<br><a href="mailto:info@laniakeabrands.com">info@laniakeabrands.com</a><br>© 2026 Laniakea Brands Inc.<br>For adults of legal age.</p></div></footer>
+<script>const nav=document.querySelector('#nav'),progress=document.querySelector('#progress'),hero=document.querySelector('.hero');const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.1});document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));const vo=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;if(e.isIntersecting){v.play().then(()=>v.classList.add('on')).catch(()=>{})}else{v.pause()}}),{threshold:.25});document.querySelectorAll('.bgvid').forEach(v=>vo.observe(v));let ticking=false;function motion(){const y=scrollY,max=document.documentElement.scrollHeight-innerHeight;nav.classList.toggle('scrolled',y>35);progress.style.height=`${max?y/max*100:0}%`;if(hero){const hz=Math.min(8,y/140);hero.style.backgroundSize=`auto,${100+hz}%`;hero.style.backgroundPosition=`center,center ${50+y*.018}%`}document.querySelectorAll('.brand').forEach(section=>{const r=section.getBoundingClientRect(),p=Math.max(-1,Math.min(1,(innerHeight/2-(r.top+r.height/2))/innerHeight));const logo=section.querySelector('.brand-logo'),copy=section.querySelector('.brand-copy'),packs=section.querySelector('.bb-products');if(logo)logo.style.setProperty('--scroll-shift',`${p*38}px`);if(copy)copy.style.transform=`translate3d(0,${p*-28}px,0)`;if(packs)packs.style.transform=`translate3d(0,${p*34}px,0)`;if(section.classList.contains('bb')||section.classList.contains('vt'))section.style.backgroundPosition=`center,center ${50+p*4}%`});ticking=false}addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(motion);ticking=true}},{passive:true});motion();</script>
 </body></html>
