@@ -83,20 +83,34 @@ body{background:#ede6d8;overflow-x:hidden}
 @media(max-width:780px){.hero:before{width:110vw}.proof strong{font-size:46px}.proof span{line-height:1.4;display:block;margin-top:7px}.brand{min-height:82svh;grid-template-columns:1fr}.brand-copy{min-height:150px}.brand-logo{width:78%;max-height:46vh}.bb .brand-logo{left:25px;top:145px;width:46vw}.bb-products{height:72%;width:110%;right:-20%}.vt:after{width:90vw;height:90vw;right:-28vw;top:24%}}
 </style>
 <style>
-/* Flight Path timeline — added 2026-08-11 (Claude, CH-WEB-LNK) */
-.flight{padding:clamp(90px,10vw,150px) var(--pad);border-top:1px solid var(--line);display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(40px,6vw,100px);align-items:start}
-.flight h2{font-size:clamp(56px,7vw,110px);line-height:.9;margin:14px 0 0}
-.flight h2 i{color:var(--brass)}
-.flight-head p{color:var(--muted);line-height:1.65;max-width:420px;margin-top:22px}
-.tl{list-style:none;margin:6px 0 0;padding:0;position:relative;max-width:680px}
-.tl:before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:1px;background:rgba(184,137,85,.45)}
-.tl li{position:relative;padding:0 0 40px 46px}
-.tl li:last-child{padding-bottom:0}
-.tl li:before{content:"";position:absolute;left:0;top:4px;width:13px;height:13px;border-radius:50%;background:var(--cream);border:1px solid var(--brass);box-sizing:border-box}
-.tl li:last-child:before{background:var(--brass);box-shadow:0 0 18px rgba(184,137,85,.55)}
-.tl time{font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--brass);display:block}
-.tl h3{font-family:"Instrument Serif",serif;font-weight:400;font-size:clamp(22px,2.2vw,30px);margin:8px 0 0;line-height:1.15}
-@media(max-width:780px){.flight{grid-template-columns:1fr;gap:34px}}
+/* News release popouts — added 2026-08-11 (Claude, CH-WEB-LNK) */
+.release[data-pop]{cursor:pointer;transition:.25s}
+.release[data-pop] h3{transition:color .25s}
+.release[data-pop]:hover h3{color:var(--brass)}
+.release[data-pop] h3:after{content:" ↗";font-size:.55em;color:var(--brass);opacity:0;transition:opacity .25s;vertical-align:super}
+.release[data-pop]:hover h3:after{opacity:1}
+.pop-overlay{position:fixed;inset:0;z-index:90;background:rgba(41,42,37,.58);backdrop-filter:blur(6px);display:grid;place-items:center;padding:22px;opacity:0;visibility:hidden;transition:.35s ease}
+.pop-overlay.open{opacity:1;visibility:visible}
+.pop-card{background:var(--cream);max-width:620px;width:100%;max-height:88vh;overflow-y:auto;position:relative;transform:translateY(22px);transition:.4s cubic-bezier(.2,.7,.2,1);box-shadow:0 40px 120px rgba(20,18,12,.4)}
+.pop-overlay.open .pop-card{transform:none}
+.pop-media{width:100%;aspect-ratio:16/7;background:var(--paper);display:none;overflow:hidden}
+.pop-media img{width:100%;height:100%;object-fit:cover}
+.pop-media.logo img{object-fit:contain;padding:9%}
+.pop-body{padding:34px 38px 40px}
+.pop-body time{font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--brass)}
+.pop-body h3{font-family:"Instrument Serif",serif;font-weight:400;font-size:clamp(28px,3vw,40px);margin:12px 0 16px;line-height:1.08}
+.pop-body p{color:var(--muted);line-height:1.7;font-size:15.5px;margin:0 0 14px}
+.pop-body p:last-child{margin-bottom:0}
+.pop-close{position:absolute;top:14px;right:14px;z-index:2;width:38px;height:38px;border:1px solid var(--line);border-radius:50%;background:rgba(243,237,223,.9);color:var(--ink);cursor:pointer;font-size:17px;line-height:1;display:grid;place-items:center;transition:.25s}
+.pop-close:hover{background:var(--brass);border-color:var(--brass);color:#fff}
+@media(max-width:600px){.pop-body{padding:26px 22px 30px}}
+.news-scroll{max-height:490px;overflow-y:auto;padding-right:16px;scrollbar-width:thin;scrollbar-color:var(--brass) rgba(41,42,37,.08)}
+.news-scroll::-webkit-scrollbar{width:5px}
+.news-scroll::-webkit-scrollbar-track{background:rgba(41,42,37,.08)}
+.news-scroll::-webkit-scrollbar-thumb{background:var(--brass);border-radius:3px}
+.news-hint{font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--muted);margin:10px 0 0;opacity:.7}
+.pop-share{margin-top:20px;background:none;border:none;border-bottom:1px solid var(--brass);color:var(--brass);padding:0 0 4px;cursor:pointer;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+.pop-share:hover{color:var(--ink);border-color:var(--ink)}
 </style>
 </head>
 <body>
@@ -104,7 +118,7 @@ body{background:#ede6d8;overflow-x:hidden}
 per channel strategy. Tropicalised Beach Bum packshots removed — flagged non-compliant
 (lifestyle scene / loose product); do not reintroduce. Products stat corrected to 100 per Claudia. -->
 <div class="scroll-progress" aria-hidden="true"><i id="progress"></i></div>
-<nav class="nav" id="nav"><a href="#top"><img src="/assets/13-laniakea-logo-dark-Bb9UUJvs.png" alt="Laniakea Brands"></a><div class="navlinks"><a href="#brands">Our brands</a><a href="#timeline">Timeline</a><a href="#news">News</a><a href="mailto:info@laniakeabrands.com">Contact</a></div></nav>
+<nav class="nav" id="nav"><a href="#top"><img src="/assets/13-laniakea-logo-dark-Bb9UUJvs.png" alt="Laniakea Brands"></a><div class="navlinks"><a href="#brands">Our brands</a><a href="#news">News</a><a href="mailto:info@laniakeabrands.com">Contact</a></div></nav>
 <main id="top">
 <header class="hero"><div class="reveal"><div class="eyebrow">A Canadian house of brands</div><h1 class="display">Made to<br><i>stand out.</i></h1><p>Distinct cannabis brands, thoughtfully built and reliably made under one roof.</p><div class="hero-meta"><span>Est. in Alberta</span><span>Built for Canada</span></div></div><div class="hero-mark reveal"><img src="/assets/13-laniakea-logo-dark-Bb9UUJvs.png" alt="Laniakea Brands emblem"></div></header>
 <div class="proof reveal"><div><strong>50K</strong><span>sq. ft. processing facility with the industry's most automated pre-roll capability</span></div><div><strong>8.5M</strong><span>pre-rolls / month capacity</span></div><div><strong>100+</strong><span>products</span></div><div><strong>8</strong><span>active markets</span></div></div>
@@ -114,27 +128,48 @@ per channel strategy. Tropicalised Beach Bum packshots removed — flagged non-c
 <article class="brand vt reveal"><video class="bgvid" muted loop playsinline preload="metadata" poster="/assets/vt-violet.png"><source src="/assets/vt-loop.mp4" type="video/mp4"></video><div class="veil"></div><div class="brand-copy"><span class="index">03 · Violet Tourist</span><div><p>Premium, precise and quietly unexpected.</p><a class="brand-link" href="https://violettourist.ca" rel="noopener">Visit Violet Tourist ↗</a></div></div><img class="brand-logo" src="/assets/11-violet-TOURIST-PNG-Logo-ClRzhnVU.png" alt="Violet Tourist logo"></article>
 <article class="brand ss reveal"><div class="brand-copy"><span class="index">04 · Shoestring</span><div><p>High standards. <em>Shoestring budget.</em></p><a class="brand-link" href="https://shoestringcannabis.ca" rel="noopener">Visit Shoestring ↗</a></div></div><img class="brand-logo" src="https://shoestringcannabis.ca/logo.png" alt="Shoestring Cannabis logo"></article>
 </div></section>
-<section class="flight" id="timeline"><div class="flight-head reveal"><div class="eyebrow">Milestones</div><h2 class="display">The flight<br><i>path.</i></h2><p>How 2026 was built — facility, licensing, capacity and new markets, in order.</p></div><ol class="tl reveal">
-<li><time>March 2026</time><h3>Space Race completes two consecutive years as Alberta's #1 pre-rolled joint brand</h3></li>
-<li><time>April 2026</time><h3>Construction completed on our new production facility</h3></li>
-<li><time>June 2026</time><h3>Final Health Canada licensing received — Standard Processing &amp; Medical Sales</h3></li>
-<li><time>June 2026</time><h3>Nunavut comes online as a new market</h3></li>
-<li><time>July 2026</time><h3>New facility online and in production</h3></li>
-<li><time>August 2026</time><h3>Fifth JuanaRoll machine commissioned — pre-roll capacity reaches 8.5 million units per month</h3></li>
-<li><time>August 2026</time><h3>Newfoundland &amp; Labrador comes online</h3></li>
-<li><time>August 2026</time><h3>Beach Bum Cannabis launches in Alberta</h3></li>
-</ol></section>
 <section class="news" id="news"><div class="news-head reveal"><div class="eyebrow">Announcements</div><h2 class="display">In the<br><i>news.</i></h2></div><div class="news-list reveal">
-<article class="release"><time>June 2026</time><h3>Final Health Canada licences received</h3><p>Standard Processing and Medical Sales licences issued for Laniakea's new production facility.</p></article>
-<article class="release"><time>June 2026</time><h3>Nunavut becomes a new market</h3><p>Laniakea Brands products land in Nunavut for the first time.</p></article>
-<article class="release"><time>July 2026</time><h3>New production facility online</h3><p>Following construction completion in April, Laniakea's new facility enters full production.</p></article>
-<article class="release"><time>July 8, 2026</time><h3>Shoestring Cannabis lands in Manitoba</h3><p>Shoestring 10 × 0.5 g pre-rolls are now available to licensed retailers across Manitoba — straightforward cannabis, no shortcuts.</p></article>
-<article class="release"><time>August 5, 2026</time><h3>Laniakea Brands launches its new home</h3><p>laniakeabrands.com relaunches, bringing Beach Bum, Space Race, Violet Tourist and Shoestring together under one roof.</p></article>
-<article class="release"><time>August 2026</time><h3>Pre-roll capacity reaches 8.5 million units per month</h3><p>The commissioning of Laniakea's fifth JuanaRoll machine, alongside existing equipment, brings monthly pre-rolled joint capacity to 8.5 million units.</p></article>
-<article class="release"><time>August 2026</time><h3>Newfoundland &amp; Labrador comes online</h3><p>Laniakea Brands products are now available in Newfoundland &amp; Labrador, the company's newest market.</p></article>
-<article class="release"><time>August 2026</time><h3>Beach Bum Cannabis launches in Alberta</h3><p>Laniakea Brands' coastal brand arrives on Alberta shelves.</p></article>
+<div class="news-scroll">
+<article class="release" data-pop="tommy"><time>August 2026</time><h3>Tommy Howes joins Laniakea Brands as VP of Sales &amp; Marketing</h3><p>An energetic people leader who has seen Canadian cannabis built from the ground up, now repping all four Laniakea brands.</p></article>
+<article class="release" data-pop="juana"><time>August 2026</time><h3>Pre-roll capacity reaches 8.5 million units per month</h3><p>The commissioning of Laniakea's fifth JuanaRoll machine brings monthly pre-rolled joint capacity to 8.5 million units.</p></article>
+<article class="release" data-pop="bbab"><time>August 2026</time><h3>Beach Bum Cannabis launches in Alberta</h3><p>Laniakea Brands' coastal brand arrives on Alberta shelves.</p></article>
+<article class="release" data-pop="nl"><time>August 2026</time><h3>Newfoundland &amp; Labrador comes online</h3><p>Laniakea Brands products are now available in Newfoundland &amp; Labrador, the company's newest market.</p></article>
+<article class="release" data-pop="home"><time>August 5, 2026</time><h3>Laniakea Brands launches its new home</h3><p>laniakeabrands.com relaunches, bringing Beach Bum, Space Race, Violet Tourist and Shoestring together under one roof.</p></article>
+<article class="release" data-pop="ss"><time>July 8, 2026</time><h3>Shoestring Cannabis lands in Manitoba</h3><p>Shoestring 10 × 0.5 g pre-rolls are now available to licensed retailers across Manitoba — straightforward cannabis, no shortcuts.</p></article>
+<article class="release" data-pop="fac"><time>July 2026</time><h3>New production facility online</h3><p>Following construction completion in April, Laniakea's new facility enters full production.</p></article>
+<article class="release" data-pop="nu"><time>June 2026</time><h3>Nunavut becomes a new market</h3><p>Laniakea Brands products land in Nunavut for the first time.</p></article>
+<article class="release" data-pop="lic"><time>June 2026</time><h3>Final Health Canada licences received</h3><p>Standard Processing and Medical Sales licences issued for Laniakea's new production facility.</p></article>
+</div>
+<p class="news-hint">Scroll for more · click a headline for the full story</p>
 <div class="news-cta"><p>Media inquiries &amp; press assets</p><a href="mailto:info@laniakeabrands.com">info@laniakeabrands.com ↗</a></div>
 </div></section>
+<div class="pop-overlay" id="pop" role="dialog" aria-modal="true"><div class="pop-card"><button class="pop-close" id="popClose" aria-label="Close">✕</button><div class="pop-media" id="popMedia"><img id="popImg" alt=""></div><div class="pop-body"><time id="popDate"></time><h3 id="popTitle"></h3><div id="popText"></div><button class="pop-share" id="popShare" type="button">Copy link to this announcement</button></div></div></div>
+<script>
+const POPS={
+tommy:{date:"August 2026",title:"Tommy Howes joins Laniakea Brands as VP of Sales & Marketing",img:"/assets/13-laniakea-logo-dark-Bb9UUJvs.png",logo:true,body:["Laniakea Brands is thrilled to welcome Tommy Howes as Vice President of Sales & Marketing, leading growth across all four brands — Space Race Cannabis, Violet Tourist, Beach Bum Cannabis and Shoestring Cannabis.","Tommy has seen Canadian cannabis built from the ground up. He joined The Valens Company in the industry's earliest days and spent six years helping build it — from operations and special projects through to key accounts and regional sales leadership in the West — before moving to SNDL, where he most recently served as Senior Regional Sales Manager, West. He brings a rare combination to Laniakea: an energetic, team-first approach to leadership, and the hands-on operational roots of someone who has done the work at every level.","Boards, buyers and retail partners across the country: Tommy's line is open. Reach him at tommy.howes@laniakeabrands.com."]},
+juana:{date:"August 2026",title:"Pre-roll capacity reaches 8.5 million units per month",img:null,body:["With the commissioning of its fifth JuanaRoll machine, Laniakea Brands now operates the largest JuanaRoll fleet in the world — and stands as the most advanced pre-rolled joint producer in the country.","Together with the company's existing equipment, the new machine brings monthly pre-rolled joint capacity to 8.5 million units — scale built to serve retailers and provincial boards across Canada without compromising consistency."]},
+bbab:{date:"August 2026",title:"Beach Bum Cannabis launches in Alberta",img:"/assets/beach-bum-golden-hour-world-16x9-R7p2B8vy.png",logo:false,body:["Beach Bum Cannabis has arrived on Alberta shelves — bright, coastal and permanently on island time.","The launch brings the portfolio's sunniest brand to the company's home province, with the pre-roll lineup rolling out through licensed retailers across Alberta."]},
+nl:{date:"August 2026",title:"Newfoundland & Labrador comes online",img:"/assets/laniakea-sky.png",logo:false,body:["Laniakea Brands products are now available in Newfoundland & Labrador — the company's newest market and its furthest reach east.","The expansion continues a year of steady distribution growth, following Nunavut's addition in June."]},
+home:{date:"August 5, 2026",title:"Laniakea Brands launches its new home",img:"/assets/13-laniakea-logo-dark-Bb9UUJvs.png",logo:true,body:["laniakeabrands.com has relaunched — one roof for four very different brands.","The new corporate home brings Beach Bum, Space Race, Violet Tourist and Shoestring together in one place, alongside company news, milestones and ways to work with us."]},
+ss:{date:"July 8, 2026",title:"Shoestring Cannabis lands in Manitoba",img:"https://shoestringcannabis.ca/logo.png",logo:true,body:["Shoestring 10 × 0.5 g pre-rolls are now available to licensed retailers across Manitoba.","Straightforward cannabis, no shortcuts: Shoestring is built on one simple idea — high standards on a shoestring budget — and Manitoba is the newest province to stock it."]},
+fac:{date:"July 2026",title:"New production facility online",img:null,body:["Following construction completion in April, Laniakea's new production facility has entered full production.","The facility is home to the industry's most automated pre-roll capability, anchoring the company's processing, manufacturing, packaging and distribution under one roof."]},
+nu:{date:"June 2026",title:"Nunavut becomes a new market",img:"/assets/laniakea-sky.png",logo:false,body:["Laniakea Brands products have landed in Nunavut for the first time, extending the portfolio's reach into Canada's North.","Serving the territory is a logistics achievement in its own right — and a signal of where the company intends to be: everywhere Canadians buy legal cannabis."]},
+lic:{date:"June 2026",title:"Final Health Canada licences received",img:"/assets/13-laniakea-logo-dark-Bb9UUJvs.png",logo:true,body:["Laniakea's new facility has received its final Health Canada licences — Standard Processing and Medical Sales.","The licences complete the regulatory foundation beneath the company's operations, clearing the way for full-scale production, packaging and distribution."]}
+};
+const pop=document.getElementById('pop'),popMedia=document.getElementById('popMedia'),popImg=document.getElementById('popImg'),popDate=document.getElementById('popDate'),popTitle=document.getElementById('popTitle'),popText=document.getElementById('popText'),popShare=document.getElementById('popShare');
+let popId=null;
+function openPop(id){const d=POPS[id];if(!d)return;popId=id;popDate.textContent=d.date;popTitle.textContent=d.title;popText.innerHTML=d.body.map(p=>'<p>'+p+'</p>').join('');
+if(d.img){popImg.src=d.img;popMedia.style.display='block';popMedia.classList.toggle('logo',!!d.logo)}else{popMedia.style.display='none'}
+popShare.textContent='Copy link to this announcement';pop.classList.add('open');document.body.classList.add('lock');history.replaceState(null,'','#pr-'+id)}
+function closePop(){pop.classList.remove('open');document.body.classList.remove('lock');popId=null;history.replaceState(null,'',location.pathname+location.search)}
+document.querySelectorAll('.release[data-pop]').forEach(a=>a.addEventListener('click',()=>openPop(a.dataset.pop)));
+document.getElementById('popClose').addEventListener('click',closePop);
+pop.addEventListener('click',e=>{if(e.target===pop)closePop()});
+addEventListener('keydown',e=>{if(e.key==='Escape'&&pop.classList.contains('open'))closePop()});
+popShare.addEventListener('click',()=>{const url=location.origin+'/#pr-'+popId;(navigator.clipboard?navigator.clipboard.writeText(url):Promise.reject()).then(()=>{popShare.textContent='Link copied ✓'}).catch(()=>{popShare.textContent=url})});
+function bootPop(){if(location.hash.startsWith('#pr-')){const id=location.hash.slice(4);if(POPS[id]){setTimeout(()=>{document.getElementById('news').scrollIntoView();openPop(id)},400)}}}
+addEventListener('hashchange',bootPop);bootPop();
+</script>
 </main>
 <footer class="end"><div class="end-inner"><img src="/assets/13-laniakea-logo-dark-Bb9UUJvs.png" alt="Laniakea Brands"><p>Edmonton, Alberta<br><a href="mailto:info@laniakeabrands.com">info@laniakeabrands.com</a><br>© 2026 Laniakea Brands Inc.<br>For adults of legal age.</p></div></footer>
 <script>const nav=document.querySelector('#nav'),progress=document.querySelector('#progress'),hero=document.querySelector('.hero');const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.1});document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));const vo=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;if(e.isIntersecting){v.play().then(()=>v.classList.add('on')).catch(()=>{})}else{v.pause()}}),{threshold:.25});document.querySelectorAll('.bgvid').forEach(v=>vo.observe(v));let ticking=false;function motion(){const y=scrollY,max=document.documentElement.scrollHeight-innerHeight;nav.classList.toggle('scrolled',y>35);progress.style.height=`${max?y/max*100:0}%`;if(hero){const hz=Math.min(8,y/140);hero.style.backgroundSize=`auto,${100+hz}%`;hero.style.backgroundPosition=`center,center ${50+y*.018}%`}document.querySelectorAll('.brand').forEach(section=>{const r=section.getBoundingClientRect(),p=Math.max(-1,Math.min(1,(innerHeight/2-(r.top+r.height/2))/innerHeight));const logo=section.querySelector('.brand-logo'),copy=section.querySelector('.brand-copy'),packs=section.querySelector('.bb-products');if(logo)logo.style.setProperty('--scroll-shift',`${p*38}px`);if(copy)copy.style.transform=`translate3d(0,${p*-28}px,0)`;if(packs)packs.style.transform=`translate3d(0,${p*34}px,0)`;if(section.classList.contains('bb')||section.classList.contains('vt'))section.style.backgroundPosition=`center,center ${50+p*4}%`});ticking=false}addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(motion);ticking=true}},{passive:true});motion();</script>
